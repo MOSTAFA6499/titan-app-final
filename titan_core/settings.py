@@ -44,4 +44,4 @@ MEDIA_ROOT = BASE_DIR / 'media'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'organization.User'  # خیلی مهم
 LOGIN_URL = '/admin/login/'
-CSRF_TRUSTED_ORIGINS = ['https://your-app-domain.com']
+CSRF_TRUSTED_ORIGINS = ['https://app-django-ui77i.apps.teh2.abrhapaas.com']
