@@ -2,7 +2,7 @@ import os
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-SECRET_KEY = 'django-insecure-key-for-production-change-it'
+SECRET_KEY = 'django-insecure-key'
 DEBUG = False
 ALLOWED_HOSTS = ['*']
 
@@ -13,15 +13,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'organization',  # اضافه کردن اپلیکیشن
+    'organization',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',  # غیرفعال کردن CSRF
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -42,12 +41,6 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-AUTH_USER_MODEL = 'organization.User'  # خیلی مهم
+AUTH_USER_MODEL = 'organization.User'
 LOGIN_URL = '/admin/login/'
-CSRF_TRUSTED_ORIGINS = [
-    'https://app.django-v5ujt.mihanvps.com',
-    'http://app.django-v5ujt.mihanvps.com',
-    'https://app.django-v5ujt.mihanvps.com:8000',
-    'http://localhost',
-    'http://127.0.0.1',
-]
+CSRF_TRUSTED_ORIGINS = ['*']
