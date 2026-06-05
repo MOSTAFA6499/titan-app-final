@@ -44,4 +44,10 @@ MEDIA_ROOT = BASE_DIR / 'media'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'organization.User'  # خیلی مهم
 LOGIN_URL = '/admin/login/'
-CSRF_TRUSTED_ORIGINS = ['https://app-django-ui77i.apps.teh2.abrhapaas.com']
+CSRF_TRUSTED_ORIGINS = [
+    'https://app.django-v5ujt.mihanvps.com',
+    'http://app.django-v5ujt.mihanvps.com',
+    'https://app.django-v5ujt.mihanvps.com:8000',
+    'http://localhost',
+    'http://127.0.0.1',
+]
